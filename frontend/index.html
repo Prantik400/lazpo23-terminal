@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <title>LAZP023 Terminal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="top-item left-title">LAZP023 TERMINAL</div>
+      <div class="top-item center-status">● STATUS ACTIVE</div>
+      <div class="top-item">TIME: <span id="time"></span></div>
+      <div class="top-item">DATE: <span id="date"></span></div>
+    </div>
+
+    <div class="main">
+      <!-- LEFT -->
+      <div class="left">
+        <div class="box core">
+          <h4>CORE_STATUS</h4>
+
+          <div class="circle-area">
+            <!-- CPU -->
+            <div class="circle-box">
+              <div class="cpu">
+                <div class="ring outer"></div>
+                <div class="ring cpu-middle"></div>
+                <div class="ring inner"></div>
+                <div class="dot"></div>
+              </div>
+              <p>CPU</p>
+            </div>
+
+            <!-- GPU -->
+            <div class="circle-box">
+              <div class="gpu">
+                <div class="ring gpu-ring"></div>
+                <div class="ring gpu-middle"></div>
+                <div class="dot"></div>
+              </div>
+              <p>GPU</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box counts">
+          <div>NO_OF_ERRORSS: 0</div>
+          <div>NO_OF_WARNINGS: 0</div>
+          <div>NO_OF_SUCCESS: 0</div>
+        </div>
+
+        <div class="box graph">
+          <h4>ERROR_GRAPH</h4>
+          <canvas id="errorChart"></canvas>
+        </div>
+      </div>
+
+      <!-- MIDDLE -->
+      <div class="middle">
+        <div class="box alert">
+          <h4>ALERT_SYSTEM</h4>
+        </div>
+
+        <div class="box system">
+          <h4>SYSTEM_INFO</h4>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+        <div class="cmd-header box">
+          <h4>CMD_STATUS</h4>
+        </div>
+
+        <div class="cmd-controls box">
+          ERR | UNKNOWN | ON <br />
+          <button>RECONNECT</button>
+          <button>CLOSE</button>
+        </div>
+
+        <div class="cmd-terminal">> system ready...</div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

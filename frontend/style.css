@@ -1,0 +1,239 @@
+body {
+  margin: 0;
+  font-family: "Orbitron", san-serif;
+  font-size: 14px;
+  background: #031629;
+  color: #00f0ff;
+}
+
+/* TOP BAR */
+.topbar {
+  display: grid;
+  grid-template-columns: 28% 20% 25% 27%;
+  border-bottom: 2px solid #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+  font-size: 16px;
+}
+
+.top-item {
+  border-right: 1px solid #00f0ff;
+  padding: 10px;
+  text-align: center;
+  box-shadow: inset 0 0 5px #00f0ff;
+}
+
+.top-item:last-child {
+  border-right: none;
+}
+
+.left-title {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.center-status {
+  color: #00f0ff;
+}
+
+/* MAIN */
+.main {
+  display: flex;
+  height: 95vh;
+}
+
+/* COLUMN WIDTH FIXED */
+.left {
+  width: 40%;
+  border-right: 2px solid #00f0ff;
+  display: flex;
+  flex-direction: column;
+}
+
+.middle {
+  width: 30%;
+  border-right: 2px solid #00f0ff;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #00f0ff;
+}
+
+/* BOX */
+.box {
+  border: 1px solid #00f0ff;
+  margin: 5px;
+  padding: 8px;
+  box-shadow: 0 0 6px #00f0ff;
+}
+
+/* STRUCTURE */
+.core {
+  flex: 2;
+}
+.counts {
+  flex: 1;
+}
+.graph {
+  flex: 2;
+}
+
+.alert {
+  flex: 2;
+}
+.system {
+  flex: 1;
+}
+
+.cmd-header {
+  border-bottom: 1px solid #00f0ff;
+}
+.cmd-controls {
+  border-bottom: 1px solid #00f0ff;
+}
+
+.cmd-terminal {
+  flex: 1;
+  padding: 10px;
+}
+
+/* BUTTONS */
+button {
+  background: transparent;
+  border: 1px solid #00f0ff;
+  color: #00f0ff;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+/* CIRCLES */
+.circle-area {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80%;
+}
+
+.circle-box {
+  text-align: center;
+}
+
+.cpu,
+.gpu {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+/* RINGS */
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+/* CPU */
+.outer {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00f0ff;
+  border-left-color: #00f0ff;
+  animation: rotateCW 2s linear infinite;
+}
+
+.cpu-middle {
+  width: 65%;
+  height: 65%;
+  top: 17.5%;
+  left: 17.5%;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-right-color: #00f0ff;
+  border-bottom-color: #00f0ff;
+  animation: rotateCW 4s linear infinite;
+}
+
+.inner {
+  width: 42%;
+  height: 42%;
+  top: 26%;
+  left: 27.4%;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00f0ff;
+  animation: rotateCCW 2s linear infinite;
+}
+
+/* GPU FIXED */
+.gpu::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(0, 240, 255, 0.25);
+  border-radius: 50%;
+}
+
+.gpu-middle {
+  width: 65%;
+  height: 65%;
+  top: 17.5%;
+  left: 16%;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #00f0ff;
+  animation: rotateCCW 0.8s linear infinite;
+}
+.gpu-ring {
+  width: 100%;
+  height: 100%;
+  border-top: 3px solid #00f0ff;
+  border-bottom: 3px solid #00f0ff;
+  border-radius: 50%;
+  animation: rotateCW 2.5s linear infinite;
+}
+
+/* DOT FIX */
+.dot {
+  width: 18px;
+  height: 18px;
+  background: #00f0ff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px #00f0ff 0 0 12px #00f0ff;
+}
+
+.circle-box p {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+/* ANIMATION */
+@keyframes rotateCW {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateCCW {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

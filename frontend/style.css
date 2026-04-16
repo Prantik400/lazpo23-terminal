@@ -38,12 +38,12 @@ body {
 /* MAIN */
 .main {
   display: flex;
-  height: 95vh;
+  height: 100vh;
 }
 
 /* COLUMN WIDTH FIXED */
 .left {
-  width: 40%;
+  width: 35%;
   border-right: 2px solid #00f0ff;
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@ body {
 }
 
 .right {
-  width: 30%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   border: 2px solid #00f0ff;
@@ -66,7 +66,7 @@ body {
 /* BOX */
 .box {
   border: 1px solid #00f0ff;
-  margin: 5px;
+  margin: 1.5px;
   padding: 10px;
   box-shadow: 0 0 6px #00f0ff;
 }
@@ -280,7 +280,34 @@ button.active {
 .error-active {
   border-color: red;
   color: red;
+  background: rgb(254, 93, 93);
   animation: blinkRed 0.6s infinite;
+}
+
+body.error-glow::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 50px rgba(232, 85, 85, 0.4),
+    inset 0 0 100px rgba(227, 33, 33, 0.2);
+
+  animation: redPulse 1s infinite;
+  z-index: 999;
+}
+
+@keyframes redPulse {
+  0% {
+    box-shadow: inset 0 0 40px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: inset 0 0 80px rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: inset 0 0 40px rgba(255, 0, 0, 0.2);
+  }
 }
 
 @keyframes blinkRed {

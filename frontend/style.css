@@ -6,6 +6,10 @@ body {
   color: #00f0ff;
 }
 
+* {
+  box-sizing: border-box; /*can be removed*/
+}
+
 /* TOP BAR */
 .topbar {
   display: grid;
@@ -68,7 +72,7 @@ body {
   border: 1px solid #00f0ff;
   margin: 1.5px;
   padding: 10px;
-  box-shadow: 0 0 6px #00f0ff;
+  /*box-shadow: 0 0 6px #00f0ff;*/
 }
 
 /* STRUCTURE */

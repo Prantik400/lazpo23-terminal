@@ -14,21 +14,49 @@ const chart = new Chart(ctx, {
     labels: [],
     datasets: [
       {
-        label: "Errors",
+        label: "Errors Count",
         data: [],
         borderColor: "#00f0ff",
         borderWidth: 2,
+        pointRadius: 2,
       },
     ],
+  },
+  options: {
+    animation: false,
+    scales: {
+      x: {
+        ticks: { color: "#00f0ff" },
+        grid: { color: "rgba(0,240,255,0.1)" },
+      },
+      y: {
+        beginAtZero: true,
+        ticks: { color: "#00f0ff" },
+        grid: { color: "rgba(0,240,255,0.1)" },
+      },
+    },
+    plugins: {
+      legend: {
+        labels: { color: "#00f0ff" },
+      },
+    },
   },
 });
 
 function updateGraph(value) {
-  chart.data.labels.push("");
+  const time = new Date().toLocaleTimeString();
+
+  chart.data.labels.push(time);
   chart.data.datasets[0].data.push(value);
+
+  // keep only last 10 points (like real monitoring)
+  if (chart.data.labels.length > 10) {
+    chart.data.labels.shift();
+    chart.data.datasets[0].data.shift();
+  }
+
   chart.update();
 }
-
 // ================= ELEMENTS =================
 const errBtn = document.getElementById("errBtn");
 const onSound = document.getElementById("onSound");
@@ -328,6 +356,8 @@ async function checkSystemErrors() {
     const data = await res.json();
 
     const errorCount = data.total_errors;
+
+    updateGraph(errorCount);
 
     if (errorCount > 0 && !errorActive) {
       typeLine("> ⚠ CORE INSTABILITY DETECTED");

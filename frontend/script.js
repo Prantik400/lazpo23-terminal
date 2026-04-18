@@ -370,7 +370,7 @@ async function checkSystemErrors() {
       clearError();
     }
   } catch (err) {
-    console.log("Stats fetch failed");
+    console.log("Status fetch failed");
   }
 }
 

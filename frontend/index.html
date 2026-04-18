@@ -89,11 +89,17 @@
           </div>
         </div>
 
-        <div class="cmd-terminal">> system ready...</div>
-      </div>
-    </div>
+        <div class="cmd-terminal" id="terminal">
+         <div class="output">> system ready...</div>
+
+          <div class="input-line">
+          <span>> </span>
+            <input type="text" id="cmdInput" autofocus />
+          </div>
+        </div>
 
     <audio id="errorSound" src="../audio/err_warning.wav"></audio>
+    <audio id="onSound"src="../audio/connect.mp3"></audio>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>

@@ -56,7 +56,7 @@ app.get("/stats", (req, res) => {
 
   db.query(query, (err, result) => {
     if (err) return res.status(500).send(err);
-    res.json(result);
+    res.json(result[0]);
   });
 });
 

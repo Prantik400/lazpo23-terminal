@@ -6,6 +6,12 @@ body {
   color: #00f0ff;
 }
 
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box; /*can be removed*/
 }
@@ -42,7 +48,8 @@ body {
 /* MAIN */
 .main {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 41px);
+  overflow: hidden;
 }
 
 /* COLUMN WIDTH FIXED */
@@ -51,6 +58,7 @@ body {
   border-right: 2px solid #00f0ff;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .middle {
@@ -58,6 +66,7 @@ body {
   border-right: 2px solid #00f0ff;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .right {
@@ -65,6 +74,8 @@ body {
   display: flex;
   flex-direction: column;
   border: 2px solid #00f0ff;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* BOX */
@@ -103,6 +114,62 @@ body {
 .cmd-terminal {
   flex: 1;
   padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Share Tech Mono", monospace;
+  font-size: 13px;
+
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.cmd-terminal::-webkit-scrollbar {
+  display: none;
+}
+
+/*.cmd-terminal::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: 10px;
+  width: 2px;
+  height: 30px;
+  background: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+  opacity: 0.3;
+}*/
+
+/* INPUT LINE */
+.input-line {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+}
+
+#cmdInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #00f0ff;
+  width: 100%;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 13px;
+}
+
+/* OUTPUT LINES */
+.output {
+  margin-bottom: 4px;
+  letter-spacing: 1px;
 }
 
 /* BUTTONS */
@@ -148,7 +215,7 @@ button {
   border: 3px solid transparent;
   border-top-color: #00f0ff;
   border-left-color: #00f0ff;
-  animation: rotateCW 2s linear infinite;
+  animation: rotateCW 1.7s linear infinite;
 }
 
 .cpu-middle {
@@ -161,14 +228,14 @@ button {
   border: 3px solid transparent;
   border-right-color: #00f0ff;
   border-bottom-color: #00f0ff;
-  animation: rotateCW 4s linear infinite;
+  animation: rotateCW 2s linear infinite;
 }
 
 .inner {
   width: 42%;
   height: 42%;
-  top: 26%;
-  left: 27.4%;
+  top: 29.973%;
+  left: 29.961%;
   position: absolute;
   border-radius: 50%;
   border: 3px solid transparent;
@@ -266,8 +333,14 @@ button {
   transition: 0.3s;
 }
 
+.indicator {
+  background: #82acb25d;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 /* HOVER EFFECT */
-button:hover {
+button:hover:not(#errBtn) {
   background: #00f0ff;
   color: black;
   box-shadow: 0 0 10px #00f0ff;
@@ -284,7 +357,7 @@ button.active {
 .error-active {
   border-color: red;
   color: red;
-  background: rgb(254, 93, 93);
+  background: rgb(247, 94, 94);
   animation: blinkRed 0.6s infinite;
 }
 

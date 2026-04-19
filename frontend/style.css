@@ -91,7 +91,6 @@ body {
 /* BOX */
 .box {
   border: 1px solid rgba(0, 240, 255, 0.6);
-  /*margin: 0px;*/
   padding: 10px;
   box-sizing: border-box;
 

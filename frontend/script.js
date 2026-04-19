@@ -1,5 +1,5 @@
 // ================= TIME + DATE =================
-//setInterval(() => {
+setInterval(() => {
   const now = new Date();
   document.getElementById("time").innerText = now.toLocaleTimeString();
   document.getElementById("date").innerText = now.toLocaleDateString();

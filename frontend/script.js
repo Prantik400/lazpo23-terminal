@@ -1,5 +1,5 @@
 // ================= TIME + DATE =================
-setInterval(() => {
+//setInterval(() => {
   const now = new Date();
   document.getElementById("time").innerText = now.toLocaleTimeString();
   document.getElementById("date").innerText = now.toLocaleDateString();
@@ -14,48 +14,68 @@ const chart = new Chart(ctx, {
     labels: [],
     datasets: [
       {
-        label: "Errors Count",
         data: [],
         borderColor: "#00f0ff",
         borderWidth: 2,
-        pointRadius: 2,
+        tension: 0.4,
+        pointRadius: 0, // ❌ remove dots
       },
     ],
   },
   options: {
-    animation: false,
-    scales: {
-      x: {
-        ticks: { color: "#00f0ff" },
-        grid: { color: "rgba(0,240,255,0.1)" },
-      },
-      y: {
-        beginAtZero: true,
-        ticks: { color: "#00f0ff" },
-        grid: { color: "rgba(0,240,255,0.1)" },
-      },
-    },
+    responsive: true,
+    maintainAspectRatio: false,
+
     plugins: {
       legend: {
-        labels: { color: "#00f0ff" },
+        display: false, // ❌ remove "Errors Count" box
       },
+    },
+
+    scales: {
+      x: {
+        display: false,
+        grid: {
+          display: false,
+        },
+      },
+      y: {
+        ticks: {
+          color: "#00f0ff",
+          font: { size: 10 },
+        },
+        grid: {
+          color: "rgba(0,240,255,0.05)", // subtle grid
+        },
+      },
+    },
+
+    animation: {
+      duration: 400,
     },
   },
 });
 
+let waveData = [];
+
 function updateGraph(value) {
-  const time = new Date().toLocaleTimeString();
+  const fluctuation = Math.random() * 0.5;
 
-  chart.data.labels.push(time);
-  chart.data.datasets[0].data.push(value);
+  const point =
+    value > 0
+      ? value + fluctuation // unstable wave when errors exist
+      : fluctuation; // idle scanning wave
 
-  // keep only last 10 points (like real monitoring)
-  if (chart.data.labels.length > 10) {
-    chart.data.labels.shift();
-    chart.data.datasets[0].data.shift();
+  waveData.push(point);
+
+  if (waveData.length > 20) {
+    waveData.shift();
   }
 
-  chart.update();
+  chart.data.labels = waveData.map(() => "");
+  chart.data.datasets[0].data = waveData;
+
+  chart.update("none");
 }
 // ================= ELEMENTS =================
 const errBtn = document.getElementById("errBtn");

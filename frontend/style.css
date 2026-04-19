@@ -1,11 +1,12 @@
-body {
+/*body {
   margin: 0;
   font-family: "Orbitron", san-serif;
   font-size: 14px;
   background: #031629;
   color: #00f0ff;
+  padding: 6px;
 }
-
+*/
 html,
 body {
   height: 100%;
@@ -20,16 +21,18 @@ body {
 .topbar {
   display: grid;
   grid-template-columns: 28% 20% 25% 27%;
-  border-bottom: 2px solid #00f0ff;
-  box-shadow: 0 0 10px #00f0ff;
-  font-size: 16px;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.6);
+  background: rgba(0, 10, 20, 0.7);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+  font-size: 15px;
 }
 
 .top-item {
-  border-right: 1px solid #00f0ff;
-  padding: 10px;
+  border-right: 1px solid rgba(0, 240, 255, 0.4);
+  padding: 8px;
   text-align: center;
-  box-shadow: inset 0 0 5px #00f0ff;
+  box-shadow: inset 0 0 4pxrgba (0, 240, 255, 0.2);
+  /*backdrop-filter: blur(5px);*/
 }
 
 .top-item:last-child {
@@ -48,53 +51,113 @@ body {
 /* MAIN */
 .main {
   display: flex;
-  height: calc(100vh - 41px);
-  overflow: hidden;
+  height: calc(100vh - 60px);
+  gap: 6px;
+  padding: 6px;
 }
 
 /* COLUMN WIDTH FIXED */
 .left {
-  width: 35%;
-  border-right: 2px solid #00f0ff;
+  /*width: 35%;*/
+  flex: 1.2;
+  gap: 6px;
+  /*border-right: 2px solid #00f0ff;*/
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .middle {
-  width: 30%;
-  border-right: 2px solid #00f0ff;
+  /* width: 30%;*/
+  flex: 1;
+  gap: 6px;
+  /*border-right: 2px solid #00f0ff;*/
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .right {
-  width: 35%;
+  /*width: 35%;*/
   display: flex;
+  flex: 1;
+  gap: 6px;
   flex-direction: column;
-  border: 2px solid #00f0ff;
+  /*border: 2px solid #00f0ff;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden;*/
 }
 
 /* BOX */
 .box {
-  border: 1px solid #00f0ff;
-  margin: 1.5px;
+  border: 1px solid rgba(0, 240, 255, 0.6);
+  /*margin: 0px;*/
   padding: 10px;
-  /*box-shadow: 0 0 6px #00f0ff;*/
+  box-sizing: border-box;
+
+  background: rgba(0, 10, 20, 0.6);
+
+  box-shadow:
+    0 0 6px rgba(0, 240, 255, 0.2),
+    inset 0 0 6px rgba(0, 240, 255, 0.1);
 }
 
 /* STRUCTURE */
 .core {
-  flex: 2;
-}
-.counts {
   flex: 1;
 }
+.counts {
+  flex: 0.35;
+  font-size: 12px;
+  line-height: 1.3;
+  padding: 6px 10px;
+}
+
+.counts div {
+  margin: 2px;
+  /*line-height: 1.2;*/
+  letter-spacing: 1px;
+}
+
 .graph {
-  flex: 2;
+  flex: 2.2;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 10px;
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  background: rgba(0, 10, 20, 0.6);
+  box-shadow: inset 0 0 8px rgba(0, 240, 255, 0.15);
+}
+
+.graph canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-wrapper {
+  flex: 1;
+  position: relative;
+  padding: 4px;
+}
+
+.chart-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  animation: scan 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }
 
 .alert {
@@ -105,10 +168,14 @@ body {
 }
 
 .cmd-header {
-  border-bottom: 1px solid #00f0ff;
+  text-align: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.4);
+  letter-spacing: 2px;
 }
 .cmd-controls {
-  border-bottom: 1px solid #00f0ff;
+  border-bottom: 1px solidrgba(0, 240, 255, 0.3);
+  padding: 6px;
 }
 
 .cmd-terminal {
@@ -121,6 +188,8 @@ body {
 
   font-family: "Share Tech Mono", monospace;
   font-size: 13px;
+
+  background: rgba(0, 10, 20, 0.6);
 
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -137,23 +206,13 @@ body {
   display: none;
 }
 
-/*.cmd-terminal::after {
-  content: "";
-  position: absolute;
-  right: 2px;
-  top: 10px;
-  width: 2px;
-  height: 30px;
-  background: #00f0ff;
-  box-shadow: 0 0 10px #00f0ff;
-  opacity: 0.3;
-}*/
-
 /* INPUT LINE */
 .input-line {
   margin-top: auto;
   display: flex;
   align-items: center;
+  border-top: 1px solid rgba(0, 240, 255, 0.3);
+  padding-top: 6px;
 }
 
 #cmdInput {
@@ -170,6 +229,7 @@ body {
 .output {
   margin-bottom: 4px;
   letter-spacing: 1px;
+  text-shadow: 0 0 4px rgba(0, 240, 255, 0.4);
 }
 
 /* BUTTONS */
@@ -313,6 +373,15 @@ button {
   text-align: center;
 }
 
+.graph-header {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.4);
+  text-align: center;
+  /*flex-shrink: 0;*/
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
 /* BUTTON GRID */
 .btn-row {
   display: flex;
@@ -430,4 +499,8 @@ body.error-glow::before {
   100% {
     box-shadow: 0 0 12px #00f0ff;
   }
+}
+
+canvas {
+  filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.4));
 }

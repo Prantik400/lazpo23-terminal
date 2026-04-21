@@ -85,6 +85,8 @@ log-terminal/
 
 🚧 **In Progress**
 
+- Backend integration planned (Node.js + MongoDB)
+- Real-time data streaming to be added
 - Terminal command parsing under development
 
 ---

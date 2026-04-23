@@ -5,6 +5,10 @@ body {
   background: #031629;
   color: #00f0ff;
   padding: 6px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
 html,
@@ -21,22 +25,26 @@ body {
 .topbar {
   display: grid;
   grid-template-columns: 28% 20% 25% 27%;
-  height: 40px;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.6);
-  background: rgba(0, 10, 20, 0.7);
-  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+  height: 48px;
   align-items: center;
-  font-size: 15px;
+  border: 1px solid rgba(0, 240, 255, 0.6);
+  background: rgba(0, 10, 20, 0.7);
+  box-shadow:
+    0 0 8px rgba(0, 240, 255, 0.25),
+    inset 0 0 8px rgba(0, 240, 255, 0.1);
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .top-item {
-  border-right: 1px solid rgba(0, 240, 255, 0.4);
-  padding: 8px;
-  text-align: center;
+  border-right: 1px solid rgba(0, 240, 255, 0.35);
+  padding: 0 10px;
   height: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 4pxrgba (0, 240, 255, 0.2);
+  box-shadow: inset 0 0 4px rgba (0, 240, 255, 0.12);
+  overflow: hidden;
   /*backdrop-filter: blur(5px);*/
 }
 
@@ -55,11 +63,13 @@ body {
 
 /* MAIN */
 .main {
+  flex: 1;
   display: flex;
-  height: calc(100vh - 40px);
+  /*height: calc(100vh - 40px);*/
   gap: 6px;
   padding: 6px;
   overflow: hidden;
+  min-height: 0;
 }
 
 /* COLUMN WIDTH FIXED */

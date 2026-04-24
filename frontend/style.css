@@ -121,13 +121,17 @@ body {
 /* STRUCTURE */
 .core {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 .cs {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: 38px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   border-bottom: 1px solid rgba(0, 240, 255, 0.35);
   letter-spacing: 2px;
   font-size: 15px;
@@ -146,7 +150,7 @@ body {
 }
 
 .graph {
-  flex: 2.2;
+  flex: 1.8;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -207,6 +211,7 @@ body {
 .cmd-header {
   height: 72px;
   margin: 0;
+  font-size: 15px;
   margin-bottom: 6px;
   display: flex;
   align-items: center;
@@ -332,12 +337,13 @@ button {
 
 /* CIRCLES */
 .circle-area {
+  flex: 1;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 80%;
-  padding-bottom: 18px;
-  padding-top: 5px;
+  /*height: 100%;*/
+  padding-top: 10px;
+  padding-bottom: 25px;
 }
 
 .circle-box {
@@ -437,8 +443,10 @@ button {
 }
 
 .circle-box p {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 12px;
+  text-align: center;
+  line-height: 1;
 }
 
 /* ANIMATION */
@@ -465,13 +473,13 @@ button {
 }
 
 .graph-header {
-  padding: 6px 0;
+  padding: 6px;
   border-bottom: 1px solid rgba(0, 240, 255, 0.4);
   text-align: center;
   /*flex-shrink: 0;*/
   margin-bottom: 6px;
   letter-spacing: 2px;
-  font-size: 13px;
+  font-size: 15px;
 }
 /* BUTTON GRID */
 .btn-row {

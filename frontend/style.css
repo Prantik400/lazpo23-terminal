@@ -196,7 +196,17 @@ body {
 .system {
   flex: 1;
 }
+.box-system {
+  border: 1px solid rgba(0, 240, 255, 0.55);
 
+  background: rgba(0, 10, 20, 0.6);
+
+  box-shadow:
+    0 0 6px rgba(0, 240, 255, 0.18),
+    inset 0 0 6px rgba(0, 240, 255, 0.4);
+
+  padding: 10px;
+}
 .cmd-box {
   flex: 1;
 

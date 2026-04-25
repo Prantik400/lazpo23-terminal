@@ -207,7 +207,7 @@ body {
 
   padding: 10px;
   text-align: center;
-  
+  justify-content: center;
   font-size: 13px;
 }
 .cmd-box {

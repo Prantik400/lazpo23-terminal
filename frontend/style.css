@@ -206,6 +206,9 @@ body {
     inset 0 0 6px rgba(0, 240, 255, 0.4);
 
   padding: 10px;
+  text-align: center;
+  
+  font-size: 13px;
 }
 .cmd-box {
   flex: 1;

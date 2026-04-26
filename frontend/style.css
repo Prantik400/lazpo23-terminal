@@ -196,7 +196,7 @@ body {
 .system {
   flex: 1;
 }
-.box-system 
+.box-system {
   border: 1px solid rgba(0, 240, 255, 0.55);
 
   background: rgba(0, 10, 20, 0.6);

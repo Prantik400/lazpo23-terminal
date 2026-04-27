@@ -257,7 +257,7 @@ body {
 }
 
 .cmd-terminal {
-  flex: 1;
+  flex: ;
 
   display: flex;
   flex-direction: column;

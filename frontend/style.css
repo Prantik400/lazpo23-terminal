@@ -127,18 +127,20 @@ body {
 }
 .cs {
   height: 72px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
-  margin: 8px;
+
   font-family: "Orbitron", sans-serif;
   font-size: 15px;
   letter-spacing: 2px;
+
   text-align: center;
 
+  margin-bottom: 6px;
+
   border-bottom: 1px solid rgba(0, 240, 255, 0.4);
-  margin-bottom: 1px;
 }
 .counts {
   flex: 0.35;

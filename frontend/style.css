@@ -126,16 +126,19 @@ body {
   overflow: hidden;
 }
 .cs {
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  height: 38px;
-  margin-bottom: 6px;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.35);
-  letter-spacing: 2px;
+  padding: 6px;
+  margin: 8px;
+  font-family: "Orbitron", sans-serif;
   font-size: 15px;
-  flex-shrink: 0;
+  letter-spacing: 2px;
+  text-align: center;
+
+  border-bottom: 1px solid rgba(0, 240, 255, 0.4);
+  margin-bottom: 1px;
 }
 .counts {
   flex: 0.35;

@@ -224,7 +224,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  gap: px;
+  gap: 8px;
 
   min-height: 0;
 }

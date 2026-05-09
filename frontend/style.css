@@ -219,7 +219,7 @@ body {
   font-size: 13px;
 }
 .cmd-box {
-  flex: 1;
+  flex: ;
 
   display: flex;
   flex-direction: column;

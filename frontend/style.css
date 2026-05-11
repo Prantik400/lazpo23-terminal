@@ -288,6 +288,7 @@ body {
 
   min-height: 0;
 }
+/*
 
 .cmd-terminal::before {
   content: "";

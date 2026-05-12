@@ -305,15 +305,10 @@ body {
 
 .cmd-box::after {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
   pointer-events: none;
-
   border: 1px solid rgba(0, 240, 255, 0.18);
-
   box-shadow: 0 0 12px rgba(0, 240, 255, 0.12);
 }
 
@@ -513,21 +508,13 @@ button {
 /* DEFAULT BUTTON */
 button {
   flex: 1;
-
   margin: 0;
-
   height: 42px;
-
   background: rgba(0, 240, 255, 0.05);
-
   border: 1px solid #00f0ff;
-
   color: #00f0ff;
-
   cursor: pointer;
-
   font-family: "Orbitron", monospace;
-
   transition: 0.3s;
 }
 .indicator {

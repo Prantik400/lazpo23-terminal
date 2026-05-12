@@ -558,6 +558,7 @@ body.error-glow::before {
   animation: redPulse 1s infinite;
   z-index: 999;
 }
+/*
 
 @keyframes redPulse {
   0% {

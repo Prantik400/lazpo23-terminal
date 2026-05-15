@@ -462,7 +462,7 @@ button {
   margin-top: 10px;
   font-size: 12px;
   text-align: center;
-  line-height: 0;
+  line-height: 1;
 }
 
 /* ANIMATION */

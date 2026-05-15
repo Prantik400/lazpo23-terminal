@@ -447,7 +447,7 @@ button {
 
 /* DOT FIX */
 .dot {
-  width: 18px;
+  width: 1px;
   height: 18px;
   background: #00f0ff;
   border-radius: 50%;

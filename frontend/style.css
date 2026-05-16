@@ -500,7 +500,7 @@ button {
 /* BUTTON GRID */
 .btn-row {
   display: flex;
-  gap: 10px;
+  gap: 1px;
   width: 100%;
   margin-bottom: 10px;
 }

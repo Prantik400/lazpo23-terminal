@@ -494,7 +494,7 @@ button {
   text-align: center;
   /*flex-shrink: 0;*/
   margin-bottom: 6px;
-  letter-spacing: 2px;
+  letter-spacing: px;
   font-size: 15px;
 }
 /* BUTTON GRID */

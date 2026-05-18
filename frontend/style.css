@@ -218,6 +218,29 @@ body {
   align-items: center;
   font-size: 13px;
 }
+.sys-row {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 6px 0;
+
+  border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+
+  font-family: "Share Tech Mono", monospace;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+}
+
+.sys-row:last-child {
+  border-bottom: none;
+}
+
+.sys-row span:last-child {
+  color: #c8feff;
+}
+
 .cmd-box {
   flex: 1;
 

@@ -108,9 +108,7 @@ body {
   border: 1px solid rgba(0, 240, 255, 0.55);
   padding: 10px;
   /*box-sizing: border-box;*/
-
   background: rgba(0, 10, 20, 0.6);
-
   box-shadow:
     0 0 6px rgba(0, 240, 255, 0.18),
     inset 0 0 6px rgba(0, 240, 255, 0.4);
@@ -127,21 +125,15 @@ body {
 }
 .cs {
   height: 72px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-family: "Orbitron", sans-serif;
   font-size: 15px;
   letter-spacing: 2px;
-
   text-align: center;
-
   padding-bottom: 18px;
-
   margin-bottom: 6px;
-
   border-bottom: 1px solid rgba(0, 240, 255, 0.4);
 }
 .counts {
@@ -203,44 +195,68 @@ body {
 .system {
   flex: 1;
 }
-.box-system {
-  border: 1px solid rgba(0, 240, 255, 0.55);
 
-  background: rgba(0, 10, 20, 0.6);
+/* SYSTEM INFO HEADER */
 
-  box-shadow:
-    0 0 6px rgba(0, 240, 255, 0.18),
-    inset 0 0 6px rgba(0, 240, 255, 0.4);
-
-  padding: 10px;
-  text-align: center;
-  justify-content: center;
+.system-header {
+  display: flex;
   align-items: center;
-  font-size: 13px;
+  justify-content: center;
+  height: 72px;
+  font-weight: 600;
+  font-family: "Orbitron", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding-bottom: 5px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.4);
 }
+/* SYSTEM INFO PANEL */
+
+.box-system {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background: rgba(0, 10, 20, 0.6);
+  border: 1px solid rgba(0, 240, 255, 0.45);
+  box-shadow:
+    0 0 6px rgba(0, 240, 255, 0.15),
+    inset 0 0 6px rgba(0, 240, 255, 0.08);
+}
+
+/* ROWS */
+
 .sys-row {
   display: flex;
   justify-content: space-between;
-
-  padding: 6px 0;
-
-  border-bottom: 1px solid rgba(0, 240, 255, 0.15);
-
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.12);
   font-family: "Share Tech Mono", monospace;
-
   font-size: 12px;
-
-  letter-spacing: 1px;
 }
 
 .sys-row:last-child {
   border-bottom: none;
 }
 
-.sys-row span:last-child {
-  color: #c8feff;
+/* LABELS */
+
+.sys-label {
+  color: rgba(0, 240, 255, 0.7);
+
+  letter-spacing: 1px;
 }
 
+/* VALUES */
+
+.sys-value {
+  color: #d7ffff;
+
+  text-shadow: 0 0 4px rgba(0, 240, 255, 0.4);
+}
 .cmd-box {
   flex: 1;
 
@@ -260,11 +276,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: 1px solid rgba(0, 240, 255, 0.55);
-
   background: rgba(0, 10, 20, 0.6);
-
   box-shadow:
     0 0 6px rgba(0, 240, 255, 0.18),
     inset 0 0 6px rgba(0, 240, 255, 0.4);
@@ -288,19 +301,13 @@ body {
 
 .cmd-terminal {
   flex: 1;
-
   display: flex;
   flex-direction: column;
-
   overflow-y: auto;
-
   margin: 0;
   padding: 10px;
-
   border: 1px solid rgba(0, 240, 255, 0.55);
-
   background: rgba(0, 8, 18, 0.82);
-
   box-shadow:
     0 0 6px rgba(0, 240, 255, 0.18),
     inset 0 0 6px rgba(0, 240, 255, 0.4);

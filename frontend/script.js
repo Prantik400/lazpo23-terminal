@@ -77,6 +77,50 @@ function updateGraph(value) {
 
   chart.update("none");
 }
+// ================= SYSTEM INFO =================
+
+async function loadSystemInfo() {
+  // Platform / OS
+  document.getElementById("platformInfo").textContent = navigator.platform;
+
+  // Browser
+  const browser =
+    navigator.userAgent.match(
+      /(firefox|msie|edg(?=\/)|chrome|safari|trident)/i,
+    )?.[0] || "Unknown";
+
+  document.getElementById("browserInfo").textContent = browser.toUpperCase();
+
+  // Resolution
+  document.getElementById("resolutionInfo").textContent =
+    `${window.innerWidth}x${window.innerHeight}`;
+
+  // Network
+  document.getElementById("networkInfo").textContent = navigator.onLine
+    ? "ONLINE"
+    : "OFFLINE";
+
+  // Memory estimate
+  if (navigator.deviceMemory) {
+    document.getElementById("memoryInfo").textContent =
+      navigator.deviceMemory + " GB";
+  } else {
+    document.getElementById("memoryInfo").textContent = "UNKNOWN";
+  }
+
+  // IP Address (public IP)
+  try {
+    const res = await fetch("https://api.ipify.org?format=json");
+    const data = await res.json();
+
+    document.getElementById("ipInfo").textContent = data.ip;
+  } catch {
+    document.getElementById("ipInfo").textContent = "UNAVAILABLE";
+  }
+}
+
+loadSystemInfo();
+
 // ================= ELEMENTS =================
 const errBtn = document.getElementById("errBtn");
 const onSound = document.getElementById("onSound");

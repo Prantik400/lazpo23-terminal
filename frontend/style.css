@@ -148,6 +148,7 @@ body {
   letter-spacing: 1px;
 }
 
+/*Graph Section*/
 .graph {
   flex: 1.8;
   display: flex;

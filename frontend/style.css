@@ -83,7 +83,7 @@ body {
   min-height: 0;
   /*overflow: hidden;*/
 }
-
+/*Middle section*/
 .middle {
   /* width: 30%;*/
   flex: 1;
@@ -136,6 +136,8 @@ body {
   margin-bottom: 6px;
   border-bottom: 1px solid rgba(0, 240, 255, 0.4);
 }
+
+/* Error counts*/
 .counts {
   flex: 0.35;
   font-size: 12px;

@@ -22,6 +22,7 @@ body {
 }
 
 /* TOP BAR */
+/* Top section*/
 .topbar {
   display: grid;
   grid-template-columns: 28% 20% 25% 27%;

@@ -195,6 +195,140 @@ body {
 .alert {
   flex: 2;
 }
+/* ALERT MONITOR */
+
+.alert-monitor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  overflow-y: auto;
+  height: calc(100% - 72px);
+}
+
+.alert-top-row {
+  display: flex;
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+.alert-top-row .alert-indicator-box {
+  flex: 1;
+}
+/* ALERT BOX */
+
+.alert-indicator-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border-left: 3px solid #00f0ff;
+  background: rgba(0, 240, 255, 0.04);
+  box-shadow: inset 0 0 6px rgba(0, 240, 255, 0.08);
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s;
+}
+
+/* DOT */
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* TEXT */
+
+.indicator-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.indicator-title {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.indicator-info {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* ========================= */
+/* ERROR STATUS */
+/* ========================= */
+.error-alert {
+  border-left-color: #ff3b3b;
+  color: #ff9b9b;
+  background: rgba(255, 0, 0, 0.05);
+  box-shadow:
+    0 0 10px rgba(255, 0, 0, 0.15),
+    inset 0 0 6px rgba(255, 0, 0, 0.08);
+}
+
+.error-alert .indicator-dot {
+  background: #ff3b3b;
+  box-shadow: 0 0 12px #ff3b3b;
+}
+
+/* ========================= */
+/* SUCCESS STATUS */
+/* ========================= */
+.success-alert {
+  border-left-color: #00ff9c;
+
+  color: #9fffd8;
+
+  background: rgba(0, 255, 156, 0.05);
+
+  box-shadow:
+    0 0 10px rgba(0, 255, 156, 0.15),
+    inset 0 0 6px rgba(0, 255, 156, 0.08);
+}
+
+.success-alert .indicator-dot {
+  background: #00ff9c;
+
+  box-shadow: 0 0 12px #00ff9c;
+}
+
+/* ========================= */
+/* WARNING STATUS */
+/* ========================= */
+.warning-alert {
+  border-left-color: #ffd000;
+  color: #ffe27a;
+  background: rgba(255, 208, 0, 0.05);
+  box-shadow:
+    0 0 10px rgba(255, 208, 0, 0.15),
+    inset 0 0 6px rgba(255, 208, 0, 0.08);
+}
+
+.warning-alert .indicator-dot {
+  background: #ffd000;
+
+  box-shadow: 0 0 12px #ffd000;
+}
+/* CRITICAL BLINK */
+.critical-blink {
+  animation: criticalBlink 1s infinite;
+}
+
+@keyframes criticalBlink {
+  0% {
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.2);
+  }
+}
 .system {
   flex: 1;
 }

@@ -195,6 +195,20 @@ body {
 .alert {
   flex: 1.7;
 }
+
+.alert-header {
+  height: 57.6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding-bottom: 18px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.4);
+}
 /* ALERT MONITOR */
 
 .alert-monitor {

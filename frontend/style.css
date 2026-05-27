@@ -310,7 +310,8 @@ body {
 
   box-shadow: 0 0 12px #00ff9c;
 }
-
+/*hjb
+;lgvn*/
 /* ========================= */
 /* WARNING STATUS */
 /* ========================= */
@@ -366,7 +367,6 @@ body {
   border-bottom: 1px solid rgba(0, 240, 255, 0.4);
 }
 /* SYSTEM INFO PANEL */
-/* Sys* checkoi=*/
 .box-system {
   display: flex;
   flex-direction: column;
